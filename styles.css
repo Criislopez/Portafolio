@@ -110,14 +110,25 @@ header {
     }
 }
 
+#foto-principal {
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 .portada {
     width: 100%;
     height: 100dvh;
     position: relative;
     overflow: hidden;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20vw;
 
-     &::before {
+    &::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -126,24 +137,24 @@ header {
             linear-gradient(to right, #24242411 1px, transparent 1px),
             linear-gradient(to bottom, #24242411 1px, transparent 1px);
         background-size: 700px 600px;
-     }
-     
+    }
+
     .texto {
-        padding-left:30dvh; 
-        padding-top:30dvh;
+        padding-left: 30dvh;
+        padding-top: 0;
         z-index: 1000;
     }
+
     #nombre {
         font-size: 5.4rem;
         font-weight: 600;
         margin-bottom: 1rem;
-                   
     }
 
     #ciudad {
-            margin-bottom: 1rem;
-            width: 45rem;
-        }
+        margin-bottom: 1rem;
+        width: 45rem;
+    }
 
     a {
         padding: 8px 20px;
@@ -154,21 +165,20 @@ header {
 
     .links-container {
         display: flex;
-        .bi-envelope-fill{
+        .bi-envelope-fill {
             margin-right: 0.5rem;
         }
     }
 
     .enlace-redes {
         background-color: #ffffff00;
-        display: flex;             
-        align-items: center;        
-        justify-content: center;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 60px;
-        height: 40px;                
+        height: 40px;
         overflow: hidden;
         white-space: nowrap;
-        
     }
 
     .enlace-redes span {
@@ -190,7 +200,6 @@ header {
         opacity: 1;
         margin-left: 8px;
     }
-            
 
     .links-container svg {
         transform: scale(1.2);
@@ -203,37 +212,44 @@ header {
         bottom: 10rem;
         right: -2rem;
     }
+
     .rayas {
         position: relative;
         top: 5rem;
         left: -5rem;
         transform: scale(1.5);
     }
+
     .flechas {
         position: absolute;
         top: 5rem;
         right: 2rem;
 
         g:nth-child(1) {
-        transform: rotate(90deg);
-        transform-origin: center;
-        transform-box: fill-box;
+            transform: rotate(90deg);
+            transform-origin: center;
+            transform-box: fill-box;
         }
         g:nth-child(2) {
-        transform: rotate(270deg);
-        transform-origin: center;
-        transform-box: fill-box;
+            transform: rotate(270deg);
+            transform-origin: center;
+            transform-box: fill-box;
         }
         g:nth-child(3) {
-        transform: rotate(90deg);
-        transform-origin: center;
-        transform-box: fill-box;
+            transform: rotate(90deg);
+            transform-origin: center;
+            transform-box: fill-box;
         }
-         g:nth-child(4) {
-        transform: rotate(deg);
-        transform-origin: center;
-        transform-box: fill-box;
+        g:nth-child(4) {
+            transform: rotate(0deg);
+            transform-origin: center;
+            transform-box: fill-box;
         }
+    }
+
+    .fondo-imagen {
+        z-index: 1;
+        flex-shrink: 0;
     }
 }
 
@@ -563,6 +579,16 @@ footer {
     }
 
     /* PORTADA */
+     .portada .fondo-imagen {
+        position: relative;
+        z-index: 10;
+    }
+
+    #foto-principal {
+        width: 320px;
+        height: 320px;
+    }
+
     .portada .texto {
         padding-left: 10vw;
         padding-top: 22vh;
@@ -642,13 +668,23 @@ footer {
     /* PORTADA */
 
     .portada {
-        height: auto;
-        padding-bottom: 4rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portada .fondo-imagen {
+        margin-top: 2rem;
+        margin-left: 1.5rem;
+    }
+
+    #foto-principal {
+        width: 250px;
+        height: 250px;
     }
 
     .portada .texto {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 3rem;
+        
         padding-top: 20vh;
     }
 
@@ -728,29 +764,13 @@ footer {
     }
 
     #sobre-mi img {
-        width: 200px;
-        margin-left: 0;
-        margin-top: 2rem;
+        width: 300px;
+        margin:2rem auto 0 auto;
     }
 
 }
 
 
-/* ---------- SMALL MOBILE ---------- */
-@media (max-width: 480px) {
-
-    .portada #nombre {
-        font-size: 2.3rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    header nav ul div {
-        display: none; /* ocultamos menú en móviles muy pequeños */
-    }
-}
 
 
 
