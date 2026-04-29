@@ -15,9 +15,9 @@
             <ul>
                 <li><a href="#"><img src="./img/foto-perfil.webp" alt="logo del portfolio"></a></li>
                 <div>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#sobre-mi">Sobre mi</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#sobre-mi">Sobre mi</a></li>
                 </div>
             </ul>
         </nav>
@@ -143,7 +143,7 @@
                 </article>
                 <article>
                     <div>
-                        <img src="./img/mockup-byd.png" alt="" loading="lazy">
+                        <img src="./img/mockup-byd.png" alt="foto landing page" loading="lazy">
                     </div>
                     <div class="container-proyectos">
                         <h3>Ecommerce para conectar proveedores</h3>
@@ -155,9 +155,27 @@
                             <li class="diseño-photo">Photoshop</li>
                             <li class="diseño-ilu">Illustrator</li>
                         </ul>
-                        <button id="openVideo">Ver demo</button>
+                        <button class="openVideo" data-video="https://player.vimeo.com/video/1186902671?autoplay=1&title=0&byline=0&portrait=0">Ver demo</button>
                     </div>
                 </article>
+                 <article>
+                    <div>
+                        <img src="./img/monster-hunter.PNG" alt="foto mockup figma" loading="lazy">
+                    </div>
+                    <div class="container-proyectos">
+                        <h3>Prototipado aplicación</h3>
+                        <p>Proyecto personal para aprender a utilizar la herramienta Figma.</p>
+                            <ul class="primera-lista">
+                            <li class="figma">Figma</li>
+                        </ul>        
+                        <ul>
+                            <li class="diseño-photo">Photoshop</li>
+                            <li class="diseño-ilu">Illustrator</li>
+                        </ul>
+                        <button class="openVideo" data-video="https://player.vimeo.com/video/1187777965?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1">Ver demo</button>
+                    </div>
+                </article>
+                
             </section>
     </main>
      <div class="container-experiencia">
@@ -216,12 +234,20 @@
 
     <div id="videoModal" class="modal">
         <div class="modal-content">
-        <span id="closeVideo" class="close">&times;</span>
+            <span id="closeVideo" class="close">&times;</span>
 
-        <iframe src="https://player.vimeo.com/video/1186902671?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1" width="1664" height="936" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="demo BYD"></iframe>
+            <iframe 
+                id="videoFrame"
+                src=""
+                width="1664" 
+                height="936" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
 
-  </div>
-</div>
+        </div>
+    </div>
 
 
     <footer>

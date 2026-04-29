@@ -1,28 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const openBtn = document.getElementById("openVideo");
   const modal = document.getElementById("videoModal");
   const closeBtn = document.getElementById("closeVideo");
   const iframe = document.getElementById("videoFrame");
 
-  const videoURL = "https://player.vimeo.com/video/1186902671?autoplay=1&title=0&byline=0&portrait=0";
-
-  openBtn.onclick = () => {
-    modal.style.display = "block";
-    iframe.src = videoURL;
-    document.body.style.overflow = "hidden";
-  };
-
-  closeBtn.onclick = () => {
+  const closeModal = () => {
     modal.style.display = "none";
-    iframe.src = "";
+    iframe.src = ""; // detener el vídeo
     document.body.style.overflow = "auto";
   };
 
-  window.onclick = (e) => {
-    if (e.target == modal) {
-      modal.style.display = "none";
-      iframe.src = "";
-      document.body.style.overflow = "auto";
-    }
-  };
+  document.querySelectorAll(".openVideo").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const videoURL = btn.dataset.video;
+
+      modal.style.display = "block";
+
+      iframe.src = ""; // limpiar primero (importante)
+      setTimeout(() => {
+        iframe.src = videoURL;
+      }, 50);
+
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
 });
